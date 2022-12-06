@@ -1,11 +1,17 @@
  
 import './App.css';
-import Sidebar from './components/Navbar';
+import About from './components/About';
+import Navbar from './components/Navbar';
+import Skills from './components/Skills';
+ 
 
 function App() {
   return (
     <div className="App">
-      <Sidebar/>
+     
+      <Navbar/>
+      <About/>
+      <Skills/>
     </div>
   );
 }
