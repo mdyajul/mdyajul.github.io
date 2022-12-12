@@ -16,11 +16,12 @@ import {
   useColorModeValue,
   Stack,
   Icon,
+  Hide,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 import { Link } from "react-scroll";
 
-const Links = ["About", "Skills", "Experience", "Projects", "Testimonials"];
+const Links = ["About", "Skills", "Projects"];
 
 const NavLink = ({ children }) => (
   <Link
@@ -31,6 +32,7 @@ const NavLink = ({ children }) => (
     _hover={{
       textDecoration: "none",
       bg: useColorModeValue("gray.200", "gray.700"),
+      color:"green"
     }}
     activeClass="active"
     to={children}
@@ -38,6 +40,7 @@ const NavLink = ({ children }) => (
     smooth={true}
     offset={-100}
     duration={500}
+   
   >
     {children}
   </Link>
@@ -54,8 +57,9 @@ export default function Navbar() {
         w={"100%"}
         position={"fixed"}
         style={{ zIndex: "999" }}
+        
       >
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
+        <Flex h={16} alignItems={"center"} justifyContent={"space-between"} >
           <IconButton
             size={"md"}
             icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
@@ -63,9 +67,10 @@ export default function Navbar() {
             display={{ md: "none" }}
             onClick={isOpen ? onClose : onOpen}
           />
-          <HStack spacing={8} alignItems={"center"}>
+          <Box display={"flex"} spacing={8} alignItems={"center"}   justifyContent="space-between"    w="80%">
             <Box>
-              <Heading size={"lg"}>
+              <Hide below="md">
+                <Heading size={"lg"}>
                 <Link
                   style={{ cursor: "pointer" }}
                   px={2}
@@ -81,22 +86,30 @@ export default function Navbar() {
                   smooth={true}
                   offset={-100}
                   duration={500}
+                  
                 >
                   {" "}
-                  Prajwal{" "}
+                  Md Yajul Ansari{" "}
                 </Link>
               </Heading>
+                </Hide> 
+              
             </Box>
             <HStack
               as={"nav"}
-              spacing={4}
+              spacing={6}
               display={{ base: "none", md: "flex" }}
+           
+              
+              fontWeight={"bold"}
+              fontSize="20px"
+              marginRight={"10"}
             >
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}
             </HStack>
-          </HStack>
+          </Box>
           <Flex alignItems={"center"} gap={5}>
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
@@ -138,26 +151,26 @@ export default function Navbar() {
               >
                 <Avatar
                   size={"sm"}
-                  src={"https://i.postimg.cc/J0ff2fwn/main-pic.jpg"}
+                  src={"https://i.ibb.co/YWhTnMn/87166459-947805885614901-1884266663163985920-n.jpg"}
                 />
               </MenuButton>
               <MenuList>
                 <MenuItem>
                   <a
                     target="_blank"
-                    href="https://www.linkedin.com/in/prajwal-jaiswal-3772aa215/"
+                    href="https://www.linkedin.com/in/md-yajul-ansari-mdyajul/"
                   >
                     Linkedin
                   </a>
                 </MenuItem>
                 <MenuItem>
-                  <a target="_blank" href="https://twitter.com/Prajwal_jais">
+                  <a target="_blank" href="https://twitter.com/ansari_yajul">
                     Twitter
                   </a>
                 </MenuItem>
                 <MenuDivider />
                 <MenuItem>
-                  <a target="_blank" href="https://github.com/J-Prajwal">
+                  <a target="_blank" href="https://github.com/mdyajul">
                     Github
                   </a>
                 </MenuItem>
@@ -167,8 +180,8 @@ export default function Navbar() {
         </Flex>
 
         {isOpen ? (
-          <Box pb={4} display={{ md: "none" }}>
-            <Stack as={"nav"} spacing={4}>
+          <Box pb={4} display={{ md: "none" }} >
+            <Stack as={"nav"} spacing={4} >
               {Links.map((link) => (
                 <NavLink key={link}>{link}</NavLink>
               ))}

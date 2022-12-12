@@ -10,17 +10,17 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import { BsLinkedin, BsGithub, BsTwitter } from "react-icons/bs";
-// import Typed from "react-typed";
+ import Typed from "react-typed";
 
 export default function About() {
   const handleResume = () => {
-    fetch("Prajwal.pdf").then((res) => {
+    fetch("Yajul_Resume.pdf").then((res) => {
       res.blob().then((blob) => {
         const fileUrl = window.URL.createObjectURL(blob);
         // create an object for the file.
         let file = document.createElement("a");
         file.href = fileUrl;
-        file.download = "Prajwal.pdf";
+        file.download = "Yajul_Resume.pdf";
         file.click();
       });
     });
@@ -54,18 +54,16 @@ export default function About() {
             </Text>
             <br />
             <Text color={"blue.400"} as={"span"}>
-              {/* <Typed
+              <Typed
                 strings={[
-                  "Prajwal Jaiswal",
+                  "Md Yajul Ansari",
                   "A Full-Stack Developer",
-                  "A Tech-Enthusiast",
-                  "An Entrepreneur",
-                  "A Graphic-Designer",
+                 
                 ]}
                 typeSpeed={150}
                 backSpeed={100}
                 loop
-              ></Typed> */}
+              ></Typed>
             </Text>
           </Heading>
           <Text fontSize={{ base: "md", lg: "lg" }} color={"gray.500"}>
@@ -83,19 +81,19 @@ export default function About() {
               }}
               onClick={handleResume}
             >
-              {/* <Link
+              <Link
                 style={{ textDecoration: "none" }}
-                href="https://drive.google.com/drive/folders/1-TBHBQjmB1ygTTIPgF7I3PNFT8g0qtxX?usp=sharing"
+                href="https://drive.google.com/file/d/1218QPYfQ70Te3hz_0tMhjOh1WkqlDqbj/view?usp=sharing"
                 target={"_blank"}
-              > */}
+              >
               My Resume
-              {/* </Link> */}
+              </Link>
             </Button>
             <Button rounded={"full"}>
               <Link
                 style={{ textDecoration: "none" }}
                 target={"_blank"}
-                href="https://github.com/J-Prajwal?tab=repositories"
+                href="https://github.com/mdyajul?tab=repositories"
               >
                 My Projects
               </Link>
@@ -104,19 +102,19 @@ export default function About() {
           <Stack direction={{ base: "column", md: "row" }} spacing={4}>
             <Button>
               <Link
-                href="https://www.linkedin.com/in/prajwal-jaiswal-3772aa215/"
+                href="https://www.linkedin.com/in/md-yajul-ansari-mdyajul/"
                 target={"_blank"}
               >
                 <BsLinkedin />
               </Link>
             </Button>
             <Button>
-              <Link href="https://twitter.com/Prajwal_jais" target={"_blank"}>
+              <Link href="https://twitter.com/ansari_yajul" target={"_blank"}>
                 <BsTwitter />
               </Link>
             </Button>
             <Button>
-              <Link href="https://github.com/J-Prajwal" target={"_blank"}>
+              <Link href="https://github.com/mdyajul" target={"_blank"}>
                 <BsGithub />
               </Link>
             </Button>
@@ -131,7 +129,7 @@ export default function About() {
             width={["xs", "lg"]}
             height={["xs", "lg"]}
             src={
-              "https://i.postimg.cc/65JCvyNM/Light-Blue-and-Ivory-Soft-Gradient-UI-Reminder-Search-Personal-Instagram-Post-1.jpg"
+              "https://i.ibb.co/YWhTnMn/87166459-947805885614901-1884266663163985920-n.jpg"
             }
           />
         ) : (
@@ -142,7 +140,7 @@ export default function About() {
             width={["xs", "lg"]}
             height={["xs", "lg"]}
             src={
-              "https://i.postimg.cc/pXhGCNwT/Light-Blue-and-Ivory-Soft-Gradient-UI-Reminder-Search-Personal-Instagram-Post.jpg"
+              "https://i.ibb.co/YWhTnMn/87166459-947805885614901-1884266663163985920-n.jpg"
             }
           />
         )}
